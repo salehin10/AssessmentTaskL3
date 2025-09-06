@@ -271,6 +271,6 @@ This framework fulfills all requirements for the QA Level 3 Assessment:
 
 ---
 
-**Last Updated**: January 2025  
+**Last Updated**: Septembar 2025  
 **Framework Version**: 1.0.0  
 **Playwright Version**: Latest
