@@ -15,9 +15,9 @@ A comprehensive Playwright automation framework for the QA Level 3 Assessment, i
 
 ## 🔄 CI/CD Status
 
-[![CI/CD Pipeline](https://github.com/BS01424/AssessmentTask/actions/workflows/ci.yml/badge.svg)](https://github.com/BS01424/AssessmentTask/actions/workflows/ci.yml)
+[![CI/CD Pipeline](https://github.com/salehin10/AssessmentTaskL3/actions/workflows/ci.yml/badge.svg)](https://github.com/salehin10/AssessmentTaskL3/actions/workflows/ci.yml)
 
-**Latest CI/CD Run**: [View Latest Run](https://github.com/BS01424/AssessmentTask/actions)
+**Latest CI/CD Run**: [View Latest Run](https://github.com/salehin10/AssessmentTaskL3/actions)
 
 The CI/CD pipeline includes:
 - ✅ **Multi-Browser Testing** - Chrome, Firefox, and Microsoft Edge
@@ -46,8 +46,8 @@ The CI/CD pipeline includes:
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd AssessmentTask
+   git clone https://github.com/salehin10/AssessmentTaskL3.git
+   cd AssessmentTaskL3
    ```
 
 2. **Install dependencies**
@@ -122,7 +122,7 @@ npx playwright show-report
 ## 🏗️ Project Structure
 
 ```
-AssessmentTask/
+AssessmentTaskL3/
 ├── src/
 │   ├── pages/                 # Page Object Model classes
 │   │   ├── BasePage.ts
