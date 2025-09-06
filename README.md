@@ -6,12 +6,25 @@ A comprehensive Playwright automation framework for the QA Level 3 Assessment, i
 
 - **Page Object Model (POM)** - Maintainable and reusable test structure
 - **API & UI Testing** - Complete test coverage including API endpoints and UI flows
-- **Cross-Browser Support** - Chrome, Firefox, and Safari testing
+- **Cross-Browser Support** - Chrome, Firefox, and Microsoft Edge testing
 - **Parallel Execution** - Fast test execution with configurable workers
 - **Rich Reporting** - HTML reports, screenshots, and video recordings
 - **CI/CD Integration** - GitHub Actions workflow with artifact uploads
 - **Test Data Management** - Dynamic test data generation and credential management
 - **Invoice Download & Verification** - Complete purchase flow with file validation
+
+## 🔄 CI/CD Status
+
+[![CI/CD Pipeline](https://github.com/BS01424/AssessmentTask/actions/workflows/ci.yml/badge.svg)](https://github.com/BS01424/AssessmentTask/actions/workflows/ci.yml)
+
+**Latest CI/CD Run**: [View Latest Run](https://github.com/BS01424/AssessmentTask/actions)
+
+The CI/CD pipeline includes:
+- ✅ **Multi-Browser Testing** - Chrome, Firefox, and Microsoft Edge
+- ✅ **Parallel Execution** - Tests run simultaneously across browsers
+- ✅ **Artifact Uploads** - HTML reports, screenshots, and invoice files
+- ✅ **Cross-Platform** - Ubuntu latest with Node.js 18
+- ✅ **Automated Triggers** - Push to main/develop branches and pull requests
 
 ## 📋 Test Coverage
 
@@ -82,6 +95,23 @@ npx playwright test --ui
 
 # All browsers in parallel
 npx playwright test
+```
+
+### Parallel and Cross-Browser Execution
+```bash
+# Run all tests in parallel across all browsers
+npm run test:parallel
+
+# Run tests on specific browsers
+npm run test:chrome
+npm run test:firefox
+npm run test:edge
+
+# Run with specific number of workers
+npx playwright test --workers=4
+
+# Run tests in parallel with specific browser
+npx playwright test --project=chromium --workers=2
 ```
 
 ### View Test Reports
@@ -254,6 +284,33 @@ For questions or issues:
 1. Check the [Playwright Documentation](https://playwright.dev/)
 2. Review test logs and screenshots
 3. Create an issue in the repository
+
+## 📊 Test Data, Retry Logic & Known Limitations
+
+### Test Data Management
+- **Dynamic Generation**: Each test run generates unique user credentials using Faker.js
+- **Credential Storage**: User credentials are stored in `user_credentials.json` for reuse
+- **API Payload**: Structured test data for API requests with validation
+- **Cleanup**: Test data is automatically cleaned up after test completion
+
+### Retry Logic
+- **CI Environment**: 2 retries on test failures in CI/CD pipeline
+- **Local Environment**: 0 retries for faster local development
+- **Smart Retries**: Only retries on actual failures, not timeouts
+- **Trace Collection**: Traces are generated on first retry for debugging
+
+### Known Limitations
+- **Network Dependency**: Tests require stable internet connection for API calls
+- **Browser Compatibility**: Some features may behave differently across browsers
+- **Test Data Cleanup**: Manual cleanup may be required if tests fail unexpectedly
+- **Invoice Download**: Download path is hardcoded to `downloads/` directory
+- **API Rate Limiting**: No built-in rate limiting for API requests
+
+### Performance Considerations
+- **Parallel Execution**: Default 4 workers for optimal performance
+- **Browser Memory**: Each browser instance consumes ~200MB RAM
+- **Test Duration**: Full test suite takes ~5-10 minutes depending on system
+- **Artifact Size**: Screenshots and videos can consume significant disk space
 
 ## 🎯 Assessment Completion
 
